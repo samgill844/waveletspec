@@ -456,7 +456,7 @@ def estimate_turbulence_from_doyle(teff,logg):
 	#print('microturbulence_vel =  {}, macroturbulence =  {}'.format(microturbulence_vel,macroturbulence))
 	return microturbulence_vel, macroturbulence
 
-def wavelet_analysis(data, method = 'single_walker+emcee',wavemin=452,wavemax=648,n_use=17,n_low=4,n_high=14,Nweight=10,T=None,M=None,L=None,V=None,Prior_values='flat',draws=1000,dwt_type=bytes('d', 'utf-8'),dwt_number=4,save_data = True,grid_name='spectrum',resolution=55000,chain_file = 'chain.fits',threads=1,silent=False, cut_regions=None,email_notification = True):
+def wavelet_analysis(data, method = 'single_walker+emcee',wavemin=452,wavemax=648,n_use=17,n_low=4,n_high=14,Nweight=10,T=None,M=None,L=None,V=None,Prior_values='flat',draws=1000,dwt_type='d',dwt_number=4,save_data = True,grid_name='spectrum',resolution=55000,chain_file = 'chain.fits',threads=1,silent=False, cut_regions=None,email_notification = True):
     #####################
     # Check within range
     #####################
@@ -473,6 +473,8 @@ def wavelet_analysis(data, method = 'single_walker+emcee',wavemin=452,wavemax=64
 	    Prior_values = np.array([False]*10)
 
 
+    if (sys.version_info > (3, 0)):
+        dwt_type = bytes(dwt_type, 'utf-8')
     ###################################################
     # Set up log likelihood functions from each method
     ###################################################
