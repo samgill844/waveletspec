@@ -23,7 +23,7 @@ if __name__ == '__main__':
 
     long_description = """
 #####################################################################################
-#                              Waveletspec V-1.5                                    #
+#                              Waveletspec V-1.0                                    #
 #####################################################################################
 
 A code to determine the atmospheric parameters of FGK stars from
@@ -65,7 +65,7 @@ Trouble shooting
 
 
     setup(name='waveletspec',
-      version='1.9.5',
+      version='1.0',
         author='Samuel Gill',
         author_email='s.gill@keele.ac.uk',
         license='GNU GPLv3',
